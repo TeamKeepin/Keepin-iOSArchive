@@ -9,6 +9,9 @@ import UIKit
 
 class Temp2VC: UIViewController {
 
+    @IBOutlet weak var pullrequest: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
