@@ -12,6 +12,8 @@ class Temp3VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        print("3wns")
         // Do any additional setup after loading the view.
     }
 
