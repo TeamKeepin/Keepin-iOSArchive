@@ -17,26 +17,17 @@ import Alamofire
 
 class DataManager {
     func signIn(_ parameters: DataRequest, viewController: ServerTemplateVC) {
-        AF.request("\(Constant.BASE_URL)/user/signin", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: Constant.USER_HEADER) 
-            .validate()
+        AF.request("\(Constant.BASE_URL)/user/signup", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: Constant.USER_HEADER)
+            .validate(statusCode: 200..<500)
+            .validate(contentType: ["application/json"])
             .responseDecodable(of: DataResponse.self) { response in
-                switch response.response?.statusCode{
-                case 200:
-                    print("200")
-//                    viewController.didSuccessSignIn(message: response)
-                case 400:
-                    print("400")
-//                    viewController.failedToRequest(message: response.message)
-                default:
-                    return
-                }
                 switch response.result {
                 case .success(let response):
                     viewController.didSuccessSignIn(message: response.message)
                 case .failure(let error):
                     print(error.localizedDescription)
-//                    viewController.failedToRequest(message: response.message)
                 }
+                print(response.result)
             }
     }
 }

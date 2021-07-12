@@ -13,7 +13,7 @@ class ServerTemplateVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let exampleRequest = DataRequest(email: "fbduddn97@naver.co", password: "1234567")
+        let exampleRequest = DataRequest(email: "whatisthis@naver.com", password: "1234567", name: "mk", birth: "19980322", phoneTaken: "1", phone: "01012345678")
         DataManager().signIn(exampleRequest, viewController: self)
     }
 

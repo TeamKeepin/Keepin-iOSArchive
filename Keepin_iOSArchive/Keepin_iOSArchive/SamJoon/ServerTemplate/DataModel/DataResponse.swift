@@ -13,11 +13,5 @@ import Foundation
 struct DataResponse: Decodable{
     var status : Int
     var message : String
-    var data : DataResult?
 }
 
-struct DataResult : Decodable {
-    var jwt : String
-    var refreshToken : String
-    var name : String
-}

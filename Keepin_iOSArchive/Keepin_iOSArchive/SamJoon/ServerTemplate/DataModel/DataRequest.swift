@@ -14,4 +14,8 @@ import Foundation
 struct DataRequest: Encodable{
     var email : String
     var password : String
+    var name : String
+    var birth : String
+    var phoneTaken : String
+    var phone : String
 }
